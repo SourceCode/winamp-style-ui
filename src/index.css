@@ -1,0 +1,518 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.theme-dark, .theme-dark *));
+
+/*
+ * PINNACLE — SILVERGLASS DESIGN SYSTEM
+ * Adapted from Silverglass 0.1.10 by David Hurtado (https://github.com/DavidHurtadoAI/silverglass, MIT License).
+ * Polished silver & gunmetal surfaces, blue-glass recessed LCD displays, beveled physical controls.
+ */
+
+:root,
+.theme-light {
+  color-scheme: light;
+  --font-interface-theme: 'Plus Jakarta Sans', Tahoma, Verdana, sans-serif;
+  --font-text-theme: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+  --font-monospace-theme: 'IBM Plex Mono', Consolas, monospace;
+
+  --background-primary: #f1f3f7;
+  --background-primary-alt: #e4e8ee;
+  --background-secondary: #c9cdd5;
+  --background-secondary-alt: #b6bdc9;
+  --background-modifier-border: #8a929f;
+  --background-modifier-border-hover: #60728e;
+  --background-modifier-border-focus: #345e9c;
+  --background-modifier-hover: #254b8218;
+  --background-modifier-active-hover: #254b8228;
+  --background-modifier-form-field: #f6f8fc;
+  --background-modifier-box-shadow: #101c3550;
+
+  --text-normal: #1b2432;
+  --text-muted: #435064;
+  --text-faint: #5c6a82;
+  --text-on-accent: #ffffff;
+  --text-accent: #224b8a;
+  --text-accent-hover: #133562;
+
+  --interactive-normal: #e6e9ee;
+  --interactive-hover: #f8faff;
+  --interactive-accent: #315a98;
+  --interactive-accent-hover: #244578;
+
+  --sg-metal: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #e1e4e9 18%,
+    #adb4c0 48%,
+    #d5d9e1 52%,
+    #f4f5f7 88%,
+    #bbc2ce 100%
+  );
+  --sg-metal-subtle: linear-gradient(
+    180deg,
+    #f9fafc 0%,
+    #e7ebf0 48%,
+    #dce1e9 52%,
+    #eef1f6 100%
+  );
+  --sg-panel: linear-gradient(
+    112deg,
+    #e2e5eb 0%,
+    #f9fafb 34%,
+    #c3c8d2 68%,
+    #e5e8ee 100%
+  );
+  --sg-edge: #626b7b;
+  --sg-highlight: #ffffff;
+  --sg-shadow: #778294;
+  --sg-ink: #1d2737;
+  --sg-screen: linear-gradient(
+    165deg,
+    #5b7eb2 0%,
+    #294d88 12%,
+    #122952 46%,
+    #1b3869 75%,
+    #3b649e 100%
+  );
+  --sg-screen-text: #dcecff;
+  --sg-bevel:
+    inset 0 1px 1px #ffffff,
+    inset 1px 0 1px #ffffffc0,
+    inset 0 -2px 2px #7e899a,
+    0 1px 2px #17263a45;
+  --sg-well:
+    inset 0 2px 4px #12244075,
+    0 1px 0 #ffffff;
+  --sg-card-bg: #eef1f6;
+  --sg-table-row-alt: #e7ebf2;
+  --sg-table-hover: #d8e2f1;
+}
+
+.theme-dark {
+  color-scheme: dark;
+  --background-primary: #152039;
+  --background-primary-alt: #1b2a46;
+  --background-secondary: #384356;
+  --background-secondary-alt: #2a3548;
+  --background-modifier-border: #65748d;
+  --background-modifier-border-hover: #879ebf;
+  --background-modifier-border-focus: #b0cfff;
+  --background-modifier-hover: #aacdff18;
+  --background-modifier-active-hover: #aacdff28;
+  --background-modifier-form-field: #121f36;
+  --background-modifier-box-shadow: #00000088;
+
+  --text-normal: #e6eefc;
+  --text-muted: #b4c3da;
+  --text-faint: #8e9fb9;
+  --text-on-accent: #ffffff;
+  --text-accent: #9fc8ff;
+  --text-accent-hover: #d2e6ff;
+
+  --interactive-normal: #4e5e78;
+  --interactive-hover: #65799a;
+  --interactive-accent: #4775b8;
+  --interactive-accent-hover: #5888ce;
+
+  --sg-metal: linear-gradient(
+    180deg,
+    #8493aa 0%,
+    #56647a 20%,
+    #29374d 48%,
+    #46556e 53%,
+    #64748d 88%,
+    #354760 100%
+  );
+  --sg-metal-subtle: linear-gradient(
+    180deg,
+    #39475e 0%,
+    #2a364b 48%,
+    #232f42 52%,
+    #2f3d54 100%
+  );
+  --sg-panel: linear-gradient(
+    112deg,
+    #39465c 0%,
+    #506078 35%,
+    #29374e 72%,
+    #404f67 100%
+  );
+  --sg-edge: #0d192b;
+  --sg-highlight: #a3b1c9;
+  --sg-shadow: #101d31;
+  --sg-ink: #edf4ff;
+  --sg-screen: linear-gradient(
+    165deg,
+    #476d9f 0%,
+    #203f70 15%,
+    #0d1a34 47%,
+    #152e56 75%,
+    #345c91 100%
+  );
+  --sg-screen-text: #deedff;
+  --sg-bevel:
+    inset 0 1px 1px #c3d4ecaa,
+    inset 1px 0 1px #a5b7d366,
+    inset 0 -2px 2px #091528,
+    0 1px 2px #00000088;
+  --sg-well:
+    inset 0 2px 4px #000000aa,
+    0 1px 0 #70829e;
+  --sg-card-bg: #1a2742;
+  --sg-table-row-alt: #1f2e4d;
+  --sg-table-hover: #283c63;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-interface-theme);
+  background: var(--sg-panel);
+  color: var(--text-normal);
+  font-size: 13px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+.font-mono,
+.tabular-nums {
+  font-family: var(--font-monospace-theme);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Silverglass Title Bar with Metallic Grip Rails */
+.sg-titlebar {
+  background: var(--sg-screen);
+  border-bottom: 2px solid var(--sg-edge);
+  box-shadow: inset 0 1px #b3c8e7, inset 0 -1px #111f36;
+  color: #f0f5ff;
+}
+
+.sg-grip-rail {
+  height: 6px;
+  border: 1px solid #111f38;
+  border-radius: 5px;
+  background: var(--sg-metal);
+  box-shadow: inset 0 1px #ffffffcc;
+}
+
+/* Metallic Panels & Chassis Containers */
+.sg-chassis {
+  background: var(--sg-panel);
+}
+
+.sg-metal-bar {
+  background: var(--sg-metal);
+  border-bottom: 1px solid var(--sg-edge);
+  box-shadow: inset 0 1px var(--sg-highlight);
+  color: var(--sg-ink);
+}
+
+.sg-metal-surface {
+  background: var(--sg-metal-subtle);
+  border: 1px solid var(--sg-edge);
+  box-shadow: var(--sg-bevel);
+  color: var(--sg-ink);
+}
+
+.sg-workspace-leaf {
+  background: var(--background-primary);
+  border: 1px solid var(--sg-edge);
+  border-radius: 10px;
+  box-shadow: 0 2px 6px #07172c38;
+}
+
+.sg-section-panel {
+  background: var(--sg-card-bg);
+  border: 1px solid var(--sg-edge);
+  border-radius: 8px;
+  box-shadow: inset 0 1px 0 var(--sg-highlight), 0 1px 3px #07172c26;
+}
+
+/* Recessed Blue-Glass LCD Display */
+.sg-lcd-display {
+  background: var(--sg-screen);
+  border: 2px solid #223049;
+  border-radius: 9px;
+  box-shadow:
+    inset 0 0 0 2px #8095b6,
+    inset 0 3px 10px #000000b0,
+    0 1px 0 var(--sg-highlight);
+  color: var(--sg-screen-text);
+  position: relative;
+  overflow: hidden;
+}
+
+.sg-lcd-display::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0 3px,
+    #b7d7ff0c 3px 4px
+  );
+}
+
+.sg-lcd-readout {
+  font-family: var(--font-monospace-theme);
+  font-variant-numeric: tabular-nums;
+  color: #eef6ff;
+  text-shadow: 0 0 6px #8ab3f988;
+}
+
+/* Beveled Physical Buttons */
+.sg-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: var(--sg-metal);
+  border: 1px solid var(--sg-edge);
+  border-radius: 12px;
+  box-shadow: var(--sg-bevel);
+  color: var(--sg-ink);
+  font-weight: 600;
+  font-size: 12px;
+  padding: 5px 12px;
+  line-height: 1.2;
+  white-space: nowrap;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: filter 120ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sg-btn:hover:not(:disabled) {
+  filter: brightness(1.07);
+}
+
+.sg-btn:active:not(:disabled),
+.sg-btn[aria-pressed='true'],
+.sg-btn.is-active {
+  box-shadow: var(--sg-well);
+  transform: translateY(0.5px);
+}
+
+.sg-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.sg-btn-primary {
+  background: var(--sg-screen);
+  color: var(--sg-screen-text);
+  border: 1px solid #14284a;
+  box-shadow:
+    inset 0 1px 1px #9ec2f2,
+    inset 0 -2px 2px #0c1b36,
+    0 1px 2px #0e1e3855;
+}
+
+.sg-btn-primary:hover:not(:disabled) {
+  filter: brightness(1.12);
+}
+
+.sg-btn-primary:active:not(:disabled) {
+  box-shadow: inset 0 2px 5px #000000aa;
+}
+
+.sg-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--sg-metal);
+  border: 1px solid var(--sg-edge);
+  box-shadow: var(--sg-bevel);
+  color: var(--sg-ink);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.sg-icon-btn:hover {
+  filter: brightness(1.08);
+}
+
+.sg-icon-btn:active,
+.sg-icon-btn.is-active {
+  box-shadow: var(--sg-well);
+}
+
+/* Recessed Input Wells & Selects */
+.sg-well-input {
+  background: var(--background-modifier-form-field);
+  border: 1px solid var(--sg-edge);
+  border-radius: 8px;
+  box-shadow: var(--sg-well);
+  color: var(--text-normal);
+  padding: 5px 10px;
+  font-size: 12.5px;
+}
+
+.sg-search-input {
+  padding-left: 28px !important;
+}
+
+.sg-well-input:focus {
+  outline: 2px solid var(--interactive-accent);
+  outline-offset: 1px;
+}
+
+.sg-select {
+  appearance: none;
+  background-color: var(--background-modifier-form-field);
+  border: 1px solid var(--sg-edge);
+  border-radius: 8px;
+  box-shadow: var(--sg-well);
+  color: var(--text-normal);
+  padding: 5px 28px 5px 10px;
+  font-size: 12.5px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='m3 4.5 3 3 3-3' fill='none' stroke='%23334e78' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 9px center;
+  background-size: 12px 12px;
+}
+
+/* Left Explorer Navigation Items */
+.sg-nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  padding: 5px 9px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  color: var(--text-normal);
+  font-size: 12.5px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.sg-nav-item:hover {
+  background: var(--background-modifier-hover);
+}
+
+.sg-nav-item.is-active {
+  background: var(--sg-screen);
+  color: var(--sg-screen-text);
+  border-color: #172d50;
+  box-shadow: inset 0 1px #85a6d1, 0 1px var(--sg-highlight);
+  font-weight: 600;
+}
+
+/* Data Tables */
+.sg-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 12.5px;
+}
+
+.sg-table th {
+  background: var(--sg-metal);
+  color: var(--sg-ink);
+  border-bottom: 1px solid var(--sg-edge);
+  border-right: 1px solid var(--background-modifier-border);
+  box-shadow: inset 0 1px var(--sg-highlight);
+  padding: 7px 10px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 11.5px;
+  white-space: nowrap;
+}
+
+.sg-table th:last-child {
+  border-right: none;
+}
+
+.sg-table td {
+  padding: 7px 10px;
+  border-bottom: 1px solid var(--background-modifier-border);
+  vertical-align: middle;
+}
+
+.sg-table tbody tr:nth-child(even) {
+  background: var(--sg-table-row-alt);
+}
+
+.sg-table tbody tr:hover {
+  background: var(--sg-table-hover);
+}
+
+/* Decorative Status Bar Equalizer (Silverglass signature) */
+.sg-equalizer-box {
+  width: 76px;
+  height: 20px;
+  border: 1px solid var(--sg-edge);
+  border-radius: 4px;
+  background-color: #142847;
+  box-shadow: inset 0 1px 3px #00000099, 0 1px 0 var(--sg-highlight);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 2px 4px;
+  gap: 2px;
+  overflow: hidden;
+}
+
+.sg-eq-bar {
+  flex: 1;
+  background: repeating-linear-gradient(
+    to top,
+    #b7d8ff 0 2px,
+    transparent 2px 3px
+  );
+  animation: sg-eq-pulse 1.1s steps(4, end) infinite;
+}
+
+.sg-eq-bar:nth-child(1) { height: 35%; animation-delay: 0s; }
+.sg-eq-bar:nth-child(2) { height: 70%; animation-delay: -0.2s; }
+.sg-eq-bar:nth-child(3) { height: 90%; animation-delay: -0.4s; }
+.sg-eq-bar:nth-child(4) { height: 55%; animation-delay: -0.1s; }
+.sg-eq-bar:nth-child(5) { height: 80%; animation-delay: -0.6s; }
+.sg-eq-bar:nth-child(6) { height: 45%; animation-delay: -0.3s; }
+.sg-eq-bar:nth-child(7) { height: 95%; animation-delay: -0.5s; }
+.sg-eq-bar:nth-child(8) { height: 60%; animation-delay: -0.25s; }
+.sg-eq-bar:nth-child(9) { height: 75%; animation-delay: -0.45s; }
+.sg-eq-bar:nth-child(10) { height: 40%; animation-delay: -0.15s; }
+
+@keyframes sg-eq-pulse {
+  0%, 100% { transform: scaleY(0.55); transform-origin: bottom; }
+  50% { transform: scaleY(1); transform-origin: bottom; }
+}
+
+.sg-eq-paused .sg-eq-bar {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sg-eq-bar {
+    animation: none !important;
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-secondary);
+  box-shadow: inset 1px 0 3px #16253b44;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--sg-metal);
+  border: 1px solid var(--sg-edge);
+  border-radius: 6px;
+}

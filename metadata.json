@@ -1,0 +1,6 @@
+{
+  "name": "Pinnacle — Agentic Backlog & Release Workstation",
+  "description": "Mission-control environment for human-supervised autonomous software engineering, issue tracking, human decision gating, and release management built with the Silverglass skeuomorphic design system.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
